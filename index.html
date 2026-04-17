@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajedrez Pro</title>
+    <title>Ajedrez Pro - Master Edition</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div id="start-screen" class="screen active">
-        <h1 style="text-align:center; color:#f39c12; font-size:3rem;">♔ AJEDREZ PRO ♚</h1>
-        <p style="text-align:center; color:white; font-size:1.5rem;">Elige tu oponente</p>
-        <div style="display:flex; gap:20px; justify-content:center; margin-top:30px;">
-            <div onclick="selectCharacter('agnes')" style="background:rgba(255,255,255,0.1); padding:30px; border-radius:20px; cursor:pointer; text-align:center; color:white;">
-                <div style="font-size:4rem;">👑</div>
+        <h1 class="main-title">AJEDREZ PRO</h1>
+        <p class="subtitle">Elige tu oponente</p>
+        <div class="character-container">
+            <div onclick="selectCharacter('agnes')" class="char-card">
+                <div class="icon">👑</div>
                 <h2>Agnes</h2>
                 <p>La Estratega</p>
             </div>
-            <div onclick="selectCharacter('rick')" style="background:rgba(255,255,255,0.1); padding:30px; border-radius:20px; cursor:pointer; text-align:center; color:white;">
-                <div style="font-size:4rem;">🤠</div>
+            <div onclick="selectCharacter('rick')" class="char-card">
+                <div class="icon">🤠</div>
                 <h2>Rick</h2>
                 <p>El Casual</p>
             </div>
@@ -25,18 +25,18 @@
     </div>
 
     <div id="difficulty-screen" class="screen">
-        <h2 id="diff-title" style="text-align:center; color:white;"></h2>
-        <div id="diff-buttons" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:20px;"></div>
-        <button onclick="goBack()" style="display:block; margin:20px auto; padding:10px 20px;">← Volver</button>
+        <h2 id="diff-title"></h2>
+        <div id="diff-buttons" class="button-grid"></div>
+        <button class="btn-secondary" onclick="goBack()">← Volver</button>
     </div>
 
     <div id="game-screen" class="screen">
-        <div style="text-align:center; color:white; margin-bottom:10px;">
+        <div class="game-info">
             <span id="status">Tu turno</span>
         </div>
-        <div id="board" style="display:grid; grid-template-columns:repeat(8,60px); gap:0; margin:0 auto; width:480px; border:3px solid #333;"></div>
-        <div style="text-align:center; margin-top:20px;">
-            <button onclick="resetGame()">Reiniciar</button>
+        <div id="board"></div>
+        <div class="controls">
+            <button class="btn-danger" onclick="resetGame()">Reiniciar</button>
         </div>
     </div>
 
